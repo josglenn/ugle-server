@@ -23,7 +23,6 @@ const io = new Server(expressServer, {
 });
 
 io.on("connection", (socket) => {
-<<<<<<< Updated upstream
   const { name } = socket.handshake.query;
   console.log(`User ${name} connected`);
 
@@ -37,14 +36,6 @@ io.on("connection", (socket) => {
 
   socket.on("someone-is-typing", (activity) => {
     io.emit("someone-is-typing", activity);
-=======
-  console.log(`User ${socket.id.substring(0, 5)} connected`);
-  const userId = socket.id.substring(0, 5);
-
-  socket.on("message", (message) => {
-    console.log(message);
-    io.emit("message", message);
->>>>>>> Stashed changes
   });
 });
 
